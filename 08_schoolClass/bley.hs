@@ -1,11 +1,11 @@
-bin = [0,1,1,1,0,1,0,0,1]
+bin = [1,0,1,1,1,0,1,0,0,1]
 
 exor 0 0 = 0
 exor 0 1 = 1
 exor 1 0 = 1
 exor 1 1 = 0
 
-makeBray bin@(x:xs) = zipWith exor bin (x:bin)
+makeBray bin@(x:xs) = zipWith exor bin (0:bin)
 
 makeBin bray = scanl1 exor bray
 
